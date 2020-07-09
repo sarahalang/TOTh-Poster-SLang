@@ -1,0 +1,149 @@
+
+
+%---------------------- Code-Bsps
+\definecolor{Text}{RGB}{0.36, 0.54, 0.66}
+\definecolor{Element}{RGB}{0.53, 0.66, 0.42}
+\definecolor{Attr}{RGB}{0.6, 0.4, 0.8}
+
+
+
+
+\lstdefinelanguage{XML}
+{
+  morestring=[b]",
+  morestring=[s]{>}{<},
+  morecomment=[s]{<!--}{-->},
+  morekeywords={xmlns,version,type,canonicalRef,metr,real,target}% list your attributes here
+}
+
+\lstset{language=XML,
+showspaces=false,
+showtabs=false,
+basicstyle=\ttfamily,
+columns=fullflexible,
+breaklines=true,
+showstringspaces=false,
+breakatwhitespace=true,
+escapeinside={(*@}{@*)},
+basicstyle=\color{GamsGreen}\ttfamily,%\footnotesize,
+stringstyle=\color{AlchemyRed},
+commentstyle=\color{AlchemyBlue}\upshape,
+keywordstyle=\color{black}\bfseries,
+}
+
+
+
+%line-overflow meiden, dazu hinter begin{doc} \sloppy
+\setlength{\emergencystretch}{2pt}
+
+ %--------------------- PDF-Info
+ \hypersetup{
+    pdftitle={Master Digitale Geisteswissenschaften},
+    pdfauthor={Sarah Lang},
+    pdfsubject={Digital Humanities},
+    pdfkeywords={ZIM-ACDH, Digital Humanities, Digitale Geisteswissenschaften},
+    colorlinks=false,           % no link border color
+    pdfa,
+}
+
+
+ 
+ %--------------------------------------
+ % new commands für CV-Icons
+ 
+ % 1. Argument=favicon; 2. Argument=Text; 3.+4.=ColorName; 5.Schriftgröße z.B. \Large
+ 
+ % cvicon command
+ \newcommand{\cvicon}[4]{%
+\vspace{0.5pt}\begin{minipage}[t]{0.12\textwidth}\vspace{0pt}%
+ \begin{tabular*}{0.125\textwidth}{c c}%
+{\color{#3}\centering\Large #1} & \phantom{}\\%  
+{\color{#4}\footnotesize\sffamily \parbox[t]{\textwidth}{\centering#2}} & \phantom{}\\%
+\end{tabular*} \end{minipage} \hfill%
+  }
+ 
+  % bigicon command
+ \newcommand{\bigicon}[4]{%
+\vspace{0.5pt}\begin{minipage}[t]{0.12\textwidth}\vspace{0pt}%
+ \begin{tabular*}{0.125\textwidth}{c c}%
+{\color{#3}\centering\Huge #1} & \phantom{}\\%  
+{\color{#4}\Large\sffamily \parbox[t]{\textwidth}{\centering#2}} & \phantom{}\\%
+\end{tabular*} \end{minipage} \hfill%
+  }
+
+  % bullettpoint command
+ \newcommand{\bullettpoint}[5]{%
+\vspace{0.35em}\begin{minipage}[t]{\textwidth}\vspace{0pt}%
+ \begin{tabular*}{0.125\textwidth}{c c}%
+{\color{#3}\centering#5 #1\phantom{}} & {\color{#4}#5\sffamily \parbox[t]{\textwidth}{#2}}\\%  
+\end{tabular*}\vspace{0.15em} \end{minipage}\hfill%
+  }
+%----------------------------------------------------------------
+
+\usepackage{smartdiagram}
+
+ 
+
+\definecolor{materialpurple}{HTML}{9C27B0}
+\definecolor{materialindigo}{HTML}{3F51B5}
+\definecolor{materialblue}{HTML}{2196F3}
+\definecolor{materialcyan}{HTML}{00BCD4}
+\definecolor{materialteal}{HTML}{009688}
+\definecolor{materialgreen}{HTML}{4CAF50}
+\definecolor{materiallime}{HTML}{CDDC39}
+\definecolor{materialamber}{HTML}{FFC107}
+\definecolor{materialbrown}{HTML}{795548}
+\definecolor{materialred}{HTML}{FF4436}
+\definecolor{materialorange}{HTML}{FF5722}
+\definecolor{pblue}{HTML}{0395DE}
+
+
+%-----------------------------------------------------
+% set smartdiagram colours, from: https://github.com/Johayon/Data-Scientist-Resume-LaTeX/blob/master/twentysecondcv.cls
+\smartdiagramset{
+    bubble center node font = \Large,
+    bubble node font = \normalsize ,
+    % specifies the minimum size of the bubble center node
+    bubble center node size = 1cm,
+    %  specifies the minimum size of the bubbles
+    bubble node size = 2cm,
+    % specifies which is the distance among the bubble center node and the other bubbles
+    distance center/other bubbles = 1.5cm,
+    % sets the distance from the text to the border of the bubble center node
+    distance text center bubble = 1cm,
+    % set center bubble color
+    bubble center node color = AlchemyBlue,
+    % define the list of colors usable in the diagram
+    set color list = {materialcyan, orange, green, materialorange, materialteal, materialamber, materialindigo, materialgreen, materiallime},
+    % sets the opacity at which the bubbles are shown
+    bubble fill opacity = 0.6,
+    % sets the opacity at which the bubble text is shown
+    bubble text opacity = 1,
+    description title text width=0.5cm,
+    description title width=0.5cm,
+    description width=5cm,
+    description text width=5cm,
+    descriptive items y sep =1.25,
+    back arrow distance = 0,
+    back arrow disabled = true,
+    border color = white
+}
+\newcommand{\bubblediagram}[1]{\smartdiagram[bubble diagram]{#1}}
+
+
+\newcommand{\bubbleicon}[4]{%
+\draw[draw=none,fill=#3] (0,0) circle (2);%
+\node[](icon) at (0,0) {#4#1};%
+\node[right=1.5em,align=center] at (icon) {#2};%
+}
+
+
+
+
+
+
+
+
+
+
+
